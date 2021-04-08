@@ -4,6 +4,7 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends \
       bison \
       build-essential \
+      clang \
       flex \
       git \
       ipython \
@@ -20,7 +21,6 @@ RUN apt-get update \
 WORKDIR /workspace
 COPY build build
 COPY prebuild prebuild
-COPY test test
 
 ARG SUT_SOURCE_PATH=/workspace/source
 RUN git clone git://sourceware.org/git/binutils-gdb.git "${SUT_SOURCE_PATH}"
@@ -29,3 +29,4 @@ RUN git -C "${SUT_SOURCE_PATH}" checkout "${SUT_VERSION}"
 
 ARG BUG_DIR
 COPY "${BUG_DIR}/exploit" exploit
+COPY "${BUG_DIR}/test" test
