@@ -20,8 +20,8 @@ RUN apt-get update \
 WORKDIR /workspace
 ARG SUT_SOURCE_PATH=/workspace/source
 RUN git clone git://sourceware.org/git/binutils-gdb.git "${SUT_SOURCE_PATH}"
-ARG SUT_VERSION
-RUN git -C "${SUT_SOURCE_PATH}" checkout "${VERSION}"
+ARG SUT_VERSION=7a31b38ef87d133d8204cae67a97f1989d25fa18
+RUN git -C "${SUT_SOURCE_PATH}" checkout "${SUT_VERSION}"
 
 COPY exploit exploit
 COPY build build
