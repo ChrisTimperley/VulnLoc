@@ -1,0 +1,5 @@
+#!/bin/bash
+set -eu
+
+pushd source
+make CFLAGS="-ldl -lutil -ggdb -static" CXXFLAGS="-ldl -lutil -ggdb -static"

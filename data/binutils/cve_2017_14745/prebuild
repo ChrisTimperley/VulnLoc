@@ -1,0 +1,6 @@
+#!/bin/bash
+set -eu
+
+pushd source
+
+CFLAGS="-DFORTIFY_SOURCE=2 -ggdb -Wno-error" CXXFLAGS="$CFLAGS" ./configure --disable-shared --disable-gdb --disable-libdecnumber --disable-readline --disable-sim LIBS='-ldl -lutil'
