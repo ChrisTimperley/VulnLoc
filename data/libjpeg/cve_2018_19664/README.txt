@@ -4,10 +4,6 @@ https://github.com/libjpeg-turbo/libjpeg-turbo/commit/f8cca819a4fb42aafa5f70df43
 PoC:
 https://github.com/libjpeg-turbo/libjpeg-turbo/issues/305
 
-Command:
-> cd /root/source
-> ./djpeg -colors 256 -bmp /root/exploit
-
 =================================================================
 ==2408==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x610000007ff7 at pc 0x00000040ca25 bp 0x7ffeb6dcd630 sp 0x7ffeb6dcd620
 READ of size 1 at 0x610000007ff7 thread T0
