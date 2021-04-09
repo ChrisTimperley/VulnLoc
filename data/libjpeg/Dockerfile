@@ -8,6 +8,7 @@ RUN apt-get update \
       bison \
       build-essential \
       clang \
+      cmake \
       flex \
       gettext \
       git \
@@ -37,9 +38,11 @@ COPY build build
 COPY prebuild prebuild
 
 ARG SUT_VERSION
+ARG SUT_USES_CMAKE=yes
+ENV SUT_USES_CMAKE "${SUT_USES_CMAKE}"
 RUN git -C "${SUT_SOURCE_PATH}" checkout "${SUT_VERSION}" \
  && cd "${SUT_SOURCE_PATH}" \
- && autoreconf -fiv
+ && [ "${SUT_USES_CMAKE}" = no ] && autoreconf -fiv || exit 0
 
 ARG BUG_DIR
 COPY "${BUG_DIR}/exploit" exploit
