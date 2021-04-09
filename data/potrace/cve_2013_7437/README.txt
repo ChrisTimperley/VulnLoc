@@ -3,7 +3,3 @@ https://bugs.debian.org/cgi-bin/bugreport.cgi?att=1;bug=778646;filename=potrace-
 
 PoC:
 https://bugzilla.redhat.com/show_bug.cgi?id=955808
-
-Command:
-> cd /root/source/src
-> ./potrace /root/exploit
