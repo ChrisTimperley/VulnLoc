@@ -17,10 +17,9 @@ cve_2016_10092:
 	  --build-arg SUT_VERSION=43bc256 \
 	  --build-arg BUG_DIR="$@"
 
-# FIXME: reads source from an archive
 cve_2016_10094:
 	docker build . -t "${PROGRAM_NAME}-$@" \
-	  --build-arg SUT_VERSION=TODO \
+	  --build-arg SUT_GET_CODE_FROM_ARCHIVE=yes \
 	  --build-arg BUG_DIR="$@"
 
 cve_2016_10272:
@@ -28,22 +27,19 @@ cve_2016_10272:
 	  --build-arg SUT_VERSION=43bc256 \
 	  --build-arg BUG_DIR="$@"
 
-# FIXME: reads source from an archive
 cve_2016_3186:
 	docker build . -t "${PROGRAM_NAME}-$@" \
-	  --build-arg SUT_VERSION=TODO \
+	  --build-arg SUT_GET_CODE_FROM_ARCHIVE=yes \
 	  --build-arg BUG_DIR="$@"
 
-# FIXME: reads source from an archive
 cve_2016_5314:
 	docker build . -t "${PROGRAM_NAME}-$@" \
-	  --build-arg SUT_VERSION=TODO \
+	  --build-arg SUT_GET_CODE_FROM_ARCHIVE=yes \
 	  --build-arg BUG_DIR="$@"
 
-# FIXME: reads source from an archive
 cve_2016_5321:
 	docker build . -t "${PROGRAM_NAME}-$@" \
-	  --build-arg SUT_VERSION=TODO \
+	  --build-arg SUT_GET_CODE_FROM_ARCHIVE=yes \
 	  --build-arg BUG_DIR="$@"
 
 cve_2016_9273:
