@@ -10,6 +10,7 @@ SOURCE_DIR="${HERE_DIR}/source"
 pushd "${SOURCE_DIR}"
 
 if [[ "${REPAIR_TOOL}" == "extractfix" ]]; then
+  export LLVM_COMPILER=clang
   pushd klee
 fi
 
