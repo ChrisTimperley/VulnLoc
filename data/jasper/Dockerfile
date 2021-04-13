@@ -31,6 +31,8 @@ ARG SUT_SOURCE_PATH=/workspace/source
 
 COPY build build
 COPY prebuild prebuild
+RUN ln -s prebuild project_config.sh \
+ && ln -s build project_build.sh
 
 ARG BUG_DIR
 COPY "${BUG_DIR}/" .
