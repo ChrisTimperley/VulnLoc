@@ -25,8 +25,8 @@ if [[ "${REPAIR_TOOL}" == "extractfix" ]]; then
     export LLVM_COMPILER=clang
     export CC=wllvm
   elif [[ "${COMPILE_TYPE}" == "lowfat" ]]; then
-    CC="${LOWFAT_CLANG}"
-    CFLAGS="${CFLAGS} -fsanitize=integer-divide-by-zero -fsanitize=lowfat -mllvm -lowfat-debug -mllvm -lowfat-no-check-memset -mllvm -lowfat-no-check-memcpy -mllvm -lowfat-no-check-escapes -mllvm -lowfat-no-check-fields -mllvm -lowfat-symbolize -lstlimpl"
+    export CC="${LOWFAT_CLANG}"
+    export CFLAGS="${CFLAGS} -fsanitize=integer-divide-by-zero -fsanitize=lowfat -mllvm -lowfat-debug -mllvm -lowfat-no-check-memset -mllvm -lowfat-no-check-memcpy -mllvm -lowfat-no-check-escapes -mllvm -lowfat-no-check-fields -mllvm -lowfat-symbolize -lstlimpl"
   fi
 
 fi
