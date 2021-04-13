@@ -9,5 +9,5 @@ pushd "${SOURCE_DIR}"
 if [[ "${SUT_USES_CMAKE}" = yes ]]; then
   cmake CMakeLists.txt
 else
-  CFLAGS="-static ${CFLAGS:-}" CXXFLAGS="-static ${CXXFLAGS:-}" ./configure
+  ./configure
 fi

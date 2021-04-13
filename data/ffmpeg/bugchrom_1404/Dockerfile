@@ -1,10 +1,5 @@
 FROM ubuntu:16.04
 
-# install miscellaneous
-RUN apt-get update
-RUN apt-get install -y build-essential vim git wget unzip tar clang
-RUN apt-get install -y nasm valgrind libass-dev libmp3lame-dev dh-autoreconf
-
 # copy setup scripts & exploits
 WORKDIR /root
 COPY ./BUGCHROM_1404-setup.zip /root

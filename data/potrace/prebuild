@@ -6,4 +6,4 @@ SOURCE_DIR="${HERE_DIR}/source"
 
 pushd "${SOURCE_DIR}"
 
-CFLAGS="-static ${CFLAGS:-}" CXXFLAGS="-static ${CXXFLAGS:-}" ./configure
+./configure
