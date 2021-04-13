@@ -31,8 +31,10 @@ ARG SUT_SOURCE_PATH=/workspace/source
 
 COPY build build
 COPY prebuild prebuild
+# NOTE handle extractfix's naming assumptions
 RUN ln -s prebuild project_config.sh \
- && ln -s build project_build.sh
+ && ln -s build project_build.sh \
+ && ln -s source project
 
 ARG BUG_DIR
 COPY "${BUG_DIR}/" .
