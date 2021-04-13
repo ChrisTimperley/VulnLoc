@@ -31,6 +31,7 @@ ARG SUT_SOURCE_PATH=/workspace/source
 
 COPY build build
 COPY prebuild prebuild
+COPY klee-test klee-test
 COPY project_compile.sh project_compile.sh
 # NOTE handle extractfix's naming assumptions
 RUN ln -s prebuild project_config.sh \
