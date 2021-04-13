@@ -4,8 +4,8 @@ set -eu
 HERE_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 SOURCE_DIR="${HERE_DIR}/source"
 
-CFLAGS="${CFLAGS:-}"
-CXXFLAGS="${CXXFLAGS:-}"
+export CFLAGS="${CFLAGS:-}"
+export CXXFLAGS="${CXXFLAGS:-}"
 CONFIG_OPTIONS=""
 
 pushd "${SOURCE_DIR}"
@@ -18,7 +18,7 @@ if [[ "${REPAIR_TOOL}" == "extractfix" ]]; then
   mkdir klee
   pushd klee
 
-  CFLAGS="-g -D__NO_STRING_INLINES  -D_FORTIFY_SOURCE=0 -U__OPTIMIZE__ -lkleeRuntest -lkleeBasic -Wno-everything ${CFLAGS}"
+  export CFLAGS="-g -D__NO_STRING_INLINES  -D_FORTIFY_SOURCE=0 -U__OPTIMIZE__ -lkleeRuntest -lkleeBasic -Wno-everything ${CFLAGS}"
   CONFIG_OPTIONS="--disable-debug --disable-dmalloc --disable-libjpeg --disable-opengl --enable-static --disable-shared"
 
   if [[ "${COMPILE_TYPE}" == "to_bc" ]]; then
